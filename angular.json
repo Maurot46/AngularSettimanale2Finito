@@ -3,11 +3,35 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "AngularSettimanale2": {
+    "movies": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:application": {
+          "strict": true
         }
       },
       "root": "",
@@ -17,7 +41,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-settimanale2",
+            "outputPath": "dist/movies",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,10 +93,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "AngularSettimanale2:build:production"
+              "browserTarget": "movies:build:production"
             },
             "development": {
-              "browserTarget": "AngularSettimanale2:build:development"
+              "browserTarget": "movies:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +104,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "AngularSettimanale2:build"
+            "browserTarget": "movies:build"
           }
         },
         "test": {
@@ -103,5 +127,9 @@
         }
       }
     }
+  },
+  "defaultProject": "movies",
+  "cli": {
+    "analytics": "be7c591b-c961-4cd7-8ff2-c979ced5e1c0"
   }
 }
